@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+
+        <!-- Title -->
+        <title>Safeboot</title>
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/e94e51d377.js" crossorigin="anonymous"></script>
+
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Additional Styles -->
+        <style>
+
+            * {
+
+                font-family: 'Nunito', sans-serif;
+                scroll-behavior: smooth;
+
+            }
+
+            body {
+
+                transition: all 0.35s ease;
+
+            }
+
+            .mono {
+
+                font-family: 'IBM Plex Mono', monospace;
+
+            }
+
+            .wiggle {
+
+                background-color: #232323;
+                background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230b0b0b' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+            }
+
+            .wave {
+
+                background-color: #232323;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%230b0b0b' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+            }
+
+            ::-webkit-scrollbar {
+
+                width: 1.25rem;
+
+            }
+
+            ::-webkit-scrollbar-thumb {
+
+                --tw-gradient-from: #ec4899;
+                --tw-gradient-to: #0ea5e9;
+                --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+                background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+                border-color: #0b0b0b;
+                border-width: 6px;
+                border-style: solid;
+                border-radius: 9999px;
+
+            }
+
+            ::-webkit-scrollbar-track {
+
+                background-color: #0b0b0b;
+
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+
+                --tw-gradient-from: #f472b6;
+                --tw-gradient-to: #38bdf8;
+                --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+                background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+
+            }
+
+        </style>
+        
+    </head>
+
+    <body class="bg-[#0b0b0b]">
+
+        <div class="welcome w-full min-h-screen grid grid-cols-2 gap-8 p-20">
+
+            <div class="left relative flex flex-col justify-center gap-8">
+
+                <img src="images/logo.png" alt="Safeboot Logo" class="w-20 h-20 z-10">
+
+                <img src="images/logo.png" alt="Safeboot Logo" class="w-20 h-20 absolute top-40 mt-2 blur-xl">
+
+                <div class="flex flex-col">
+
+                    <h3 class="text-2xl text-white">Hey, my name is</h3>
+
+                    <h1 class="text-6xl font-bold text-white z-10">Safeboot</h1>
+
+                    <h1 class="text-6xl font-bold text-white mt-8 absolute blur-xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-sky-500">Safeboot</h1>
+
+                </div>
+
+                <p class="text-lg mono text-white tracking-wider">Full-Stack Web Developer</p>
+
+            </div>
+
+            <div class="right flex flex-col justify-center items-end gap-4">
+
+                <div class="relative group">
+
+                    <a href="#about" class="text-xl font-medium mono text-white z-10">About</a>
+
+                    <p class="text-xl font-medium mono text-white pointer-events-none z-0 top-0 blur-lg brightness-125 absolute text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-500 opacity-0 group-hover:opacity-100 transition duration-300">About</p>
+
+                </div>
+
+                <div class="relative group">
+
+                    <a href="#" class="text-xl font-medium mono text-white z-10">Projects</a>
+
+                    <p class="text-xl font-medium mono text-white pointer-events-none z-0 top-0 blur-lg brightness-125 absolute text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 group-hover:opacity-100 transition duration-300">Projects</p>
+
+                </div>
+
+                <div class="relative group">
+
+                    <a href="#" class="text-xl font-medium mono text-white z-10">Skills</a>
+
+                    <p class="text-xl font-medium mono text-white pointer-events-none z-0 top-0 blur-lg brightness-125 absolute text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-sky-500 opacity-0 group-hover:opacity-100 transition duration-300">Skills</p>
+
+                </div>
+
+                <div class="relative group">
+
+                    <a href="#" class="text-xl font-medium mono text-white z-10">Contact</a>
+
+                    <p class="text-xl font-medium mono text-white pointer-events-none z-0 top-0 blur-lg brightness-125 absolute text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500 opacity-0 group-hover:opacity-100 transition duration-300">Contact</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="about relative w-full min-h-screen p-20 flex justify-center items-stretch group" id="about">
+
+            <div class="about-container z-10 w-full flex grid grid-cols-4 gap-8 p-16 bg-[#232323] z-10 rounded-lg">
+
+                <div class="general-info flex flex-col justify-between items-start">
+
+                    <img src="images/Geo.png" class="rounded-full border-8 border-white w-3/4" alt="Safeboot Geo Avatar">
+
+                    <ul class="flex flex-col gap-4 list-disc list-inside marker:text-sky-200 text-white">
+
+                        <li>18 Years Old</li>
+
+                        <li>Spy Main, Don't Judge</li>
+
+                        <li>From 🇧🇦 Bosnia and Herzegovina</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-span-3 w-full flex flex-col gap-4">
+
+                    <h1 class="text-white mono font-bold text-3xl">About Me</h1>
+
+                    <p class="text-white">
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+
+                    <br><br>
+
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                        rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                        magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+                        dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+                        dolore magnam aliquam quaerat voluptatem.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="about-container-glow absolute m-20 inset-0 bg-gradient-to-r from-pink-500 to-sky-500 rounded-lg p-8 blur-lg group-hover:blur-2xl transition-all duration-500"></div>
+
+        </div>
+
+        <div class="about-continued relative w-full min-h-screen p-20 grid grid-cols-3 gap-16">
+
+            <div class="favorite-games relative flex flex-col gap-4">
+
+                <h1 class="text-sky-200 font-bold text-2xl mono">Favorite Games</h1>
+
+                <div class="bg-[#232323]/90 p-4 w-full h-full flex flex-col gap-2 rounded-lg z-10">
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/139b23924c6bb8418a337b563518d83a.jpg" class="h-32 rounded" alt="Team Fortress 2">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Team Fortress 2</h1>
+
+                            <p class="text-gray-200">2007</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/aba1e5182d973f43f2b3fd755f8e2314.png" class="h-32 rounded" alt="Undertale">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Undertale</h1>
+
+                            <p class="text-gray-200">2015</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/0ed5055450adbd836945761a6fa43ee0.jpg" class="h-32 rounded" alt="Minecraft">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Minecraft</h1>
+
+                            <p class="text-gray-200">2009</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/916de785d2ef62534956d827ef074884.png" class="h-32 rounded" alt="Counter-Strike: Global Offensive">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Counter-Strike: Global Offensive</h1>
+
+                            <p class="text-gray-200">2012</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/aa95fde574605465846574f2bf8d1b8d.jpg" class="h-32 rounded" alt="Portal 2">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Portal 2</h1>
+
+                            <p class="text-gray-200">2011</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/9ee18883c1713eb677a1fad8a1aae30d.png" class="h-32 rounded" alt="Tower Unite">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Tower Unite</h1>
+
+                            <p class="text-gray-200">2016</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/a65517ec6d135c127e4cf34027248576.webp" class="h-32 rounded" alt="Euro Truck Simulator 2">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Euro Truck Simulator 2</h1>
+
+                            <p class="text-gray-200">2012</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game flex items-center gap-4">
+
+                        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/128c4e5468edba9fb15b643d4c71dca2.png" class="h-32 rounded" alt="Genshin Impact">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Genshin Impact</h1>
+
+                            <p class="text-gray-200">2020</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="favorite-games-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-purple-500 to-sky-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+
+            </div>
+
+            <div class="favorite-albums relative flex flex-col gap-4">
+
+                <h1 class="text-white font-bold text-2xl mono">Favorite Albums & Songs</h1>
+
+                <div class="bg-[#232323]/90 p-4 w-full h-full grid grid-cols-2 gap-4 rounded-lg z-10">
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Porter_Robinson_-_Worlds.jpg" class="w-full rounded" alt="Porter Robinson's Worlds">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Worlds</h1>
+
+                            <p class="text-gray-200 text-center">Porter Robinson</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg" class="w-full rounded" alt="Daft Punk's Random Access Memories">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Random Access Memories</h1>
+
+                            <p class="text-gray-200 text-center">Daft Punk</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://media.pitchfork.com/photos/6010f068751891e1b1b614e7/1:1/w_320,c_limit/PorterRobinson%20Nurture%20album%20cover.jpg" class="w-full rounded" alt="Porter Robinson's Nurture">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Nurture</h1>
+
+                            <p class="text-gray-200 text-center">Porter Robinson</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://f4.bcbits.com/img/a3587125539_16.jpg" class="w-full rounded" alt="VANTAGE's Digital Daybreak">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Digital Daybreak</h1>
+
+                            <p class="text-gray-200 text-center">VANTAGE //</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://i.scdn.co/image/ab67616d0000b273f421e4ca838fe19d8cdf934a" class="w-full rounded" alt="HOME's Resonance">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Resonance</h1>
+
+                            <p class="text-gray-200 text-center">HOME</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://i.scdn.co/image/ab67616d0000b273c2c8cfd3f522e17789b17686" class="w-full rounded" alt="KORDHELL's Land of Fire">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Land of Fire</h1>
+
+                            <p class="text-gray-200 text-center">KORDHELL</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://i.ytimg.com/vi/SZ7JKDBXcBs/sddefault.jpg" class="w-full rounded object-cover" style="aspect-ratio: 1 / 1;" alt="べたTOPAZ GANG's TWENTY FOUR HOUR EP">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">TWENTY FOUR HOUR EP</h1>
+
+                            <p class="text-gray-200 text-center">べたTOPAZ GANG</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item h-max flex flex-col gap-4">
+
+                        <img src="https://i1.sndcdn.com/avatars-000365214419-k1hwm4-t500x500.jpg" class="w-full rounded" alt="AllttA's Bravado">
+
+                        <div class="text flex flex-col justify-center items-center">
+
+                            <h1 class="text-white font-bold text-xl text-center">Bravado</h1>
+
+                            <p class="text-gray-200 text-center">AllttA</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="favorite-albums-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-sky-500 to-teal-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+
+            </div>
+
+            <div class="favorite-animes relative flex flex-col gap-4">
+
+                <h1 class="text-pink-200 font-bold text-2xl mono">Favorite Animes</h1>
+
+                <div class="bg-[#232323]/90 p-4 w-full h-full flex flex-col gap-2 rounded-lg z-10">
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://cdn.anime-planet.com/anime/primary/toradora-1-190x285.jpg?t=1625886183" class="h-32 rounded" alt="Toradora!">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Toradora!</h1>
+
+                            <p class="text-gray-200">2008</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://m.media-amazon.com/images/M/MV5BYjY4MDU2YjMtNzY1MC00ODg1LWIwMzYtMWE5YTA3YTI4ZjMxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" class="h-32 rounded" alt="Sword Art Online">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Sword Art Online</h1>
+
+                            <p class="text-gray-200">2012</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://en.cloverworks.co.jp/wp/wp-content/uploads/2018/09/aobuta_kv.jpg" class="h-32 rounded" alt="Rascal Does Not Dream of Bunny Girl Senpai">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Rascal Does Not Dream of Bunny Girl Senpai</h1>
+
+                            <p class="text-gray-200">2018</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://cdn.myanimelist.net/images/anime/1074/111944.jpg" class="h-32 rounded" alt="No Game No Life">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">No Game No Life</h1>
+
+                            <p class="text-gray-200">2014</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://cdn.myanimelist.net/images/anime/5/85434.jpg" class="h-32 rounded" alt="Miss Kobayashi's Dragon Maid">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">Miss Kobayashi's Dragon Maid</h1>
+
+                            <p class="text-gray-200">2017</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="anime flex items-center gap-4">
+
+                        <img src="https://static.wikia.nocookie.net/spy-x-family9171/images/7/76/SPY_x_FAMILY_Key_Visual_1.png/revision/latest?cb=20211031171232" class="h-32 rounded" alt="SPY x FAMILY">
+
+                        <div class="text flex flex-col">
+
+                            <h1 class="text-white font-bold text-xl">SPY x FAMILY</h1>
+
+                            <p class="text-gray-200">2022</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="favorite-animes-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-teal-500 to-pink-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+
+            </div>
+
+        </div>
+        
+    </body>
+
+</html>
