@@ -27,19 +27,19 @@
         <script src="https://cdn.tailwindcss.com"></script>
 
         <!-- Additional Styles -->
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="styles.css">
         
     </head>
 
     <body class="bg-[#0b0b0b]">
 
-        <div class="welcome w-full min-h-screen grid grid-cols-2 gap-8 p-20">
+        <div class="welcome w-full min-h-screen h-full grid grid-cols-1 lg:grid-cols-2 gap-8 p-12 lg:p-20">
 
             <div class="left relative flex flex-col justify-center gap-8">
 
                 <img src="images/logo.png" alt="Safeboot Logo" class="w-20 h-20 z-10">
 
-                <img src="images/logo.png" alt="Safeboot Logo" class="w-20 h-20 absolute top-40 mt-2 blur-xl">
+                <img src="images/logo.png" alt="Safeboot Logo" class="w-20 h-20 absolute mb-48 blur-xl">
 
                 <div class="flex flex-col">
 
@@ -67,7 +67,7 @@
 
                 <div class="relative group">
 
-                    <a href="#" class="text-xl font-medium mono text-white z-10">Projects</a>
+                    <a href="#projects" class="text-xl font-medium mono text-white z-10">Projects</a>
 
                     <p class="text-xl font-medium mono text-white pointer-events-none z-0 top-0 blur-lg brightness-125 absolute text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-blue-500 opacity-0 group-hover:opacity-100 transition duration-300">Projects</p>
 
@@ -93,15 +93,15 @@
 
         </div>
 
-        <div class="about relative w-full min-h-screen p-20 flex justify-center items-stretch group" id="about">
+        <div class="about relative w-full min-h-screen p-12 lg:p-20 flex justify-center items-stretch group" id="about">
 
-            <div class="about-container z-10 w-full flex grid grid-cols-4 gap-8 p-16 bg-[#232323] z-10 rounded-lg">
+            <div class="about-container z-10 w-full grid grid-cols-1 lg:grid-cols-4 gap-y-8 lg:gap-8 p-6 lg:p-16 bg-[#232323] z-10 rounded-lg">
 
                 <div class="general-info flex flex-col justify-between items-start">
 
-                    <img src="images/Geo.png" class="rounded-full border-8 border-white w-3/4" alt="Safeboot Geo Avatar">
+                    <img src="images/Geo.png" class="rounded-full border-8 border-white w-full lg:w-3/4" alt="Safeboot Geo Avatar">
 
-                    <ul class="flex flex-col gap-4 list-disc list-inside marker:text-sky-200 text-white">
+                    <ul class="hidden lg:flex flex-col gap-4 list-disc list-inside marker:text-sky-200 text-white">
 
                         <li>18 Years Old</li>
 
@@ -140,17 +140,17 @@
 
             </div>
 
-            <div class="about-container-glow absolute m-20 inset-0 bg-gradient-to-r from-pink-500 to-sky-500 rounded-lg p-8 blur-lg group-hover:blur-2xl transition-all duration-500"></div>
+            <div class="about-container-glow absolute m-12 lg:m-20 inset-0 bg-gradient-to-r from-pink-500 to-sky-500 rounded-lg p-8 blur-lg group-hover:blur-2xl transition-all duration-500"></div>
 
         </div>
 
-        <div class="about-continued relative w-full min-h-screen p-20 grid grid-cols-3 gap-16">
+        <div class="about-continued relative w-full min-h-screen p-12 lg:p-20 grid grid-cols-1 lg:grid-cols-3 gap-16">
 
-            <div class="favorite-games relative flex flex-col gap-4">
+            <div class="favorite-games flex flex-col gap-4">
 
                 <h1 class="text-sky-200 font-bold text-2xl mono">Favorite Games</h1>
 
-                <div class="bg-[#232323]/90 p-4 w-full h-full flex flex-col gap-2 rounded-lg z-10">
+                <div class="bg-[#232323]/90 relative p-4 w-full h-full flex flex-col gap-2 rounded-lg z-auto">
 
                     <div class="game flex items-center gap-4">
 
@@ -264,17 +264,17 @@
 
                     </div>
 
-                </div>
+                    <div class="favorite-games-glow absolute top-0 -ml-4 w-full h-full bg-gradient-to-r from-purple-500 to-sky-500 rounded-lg blur-xl -z-10"></div>
 
-                <div class="favorite-games-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-purple-500 to-sky-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+                </div>
 
             </div>
 
-            <div class="favorite-albums relative flex flex-col gap-4">
+            <div class="favorite-albums flex flex-col gap-4">
 
                 <h1 class="text-white font-bold text-2xl mono">Favorite Albums & Songs</h1>
 
-                <div class="bg-[#232323]/90 p-4 w-full h-full grid grid-cols-2 gap-4 rounded-lg z-10">
+                <div class="bg-[#232323]/90 relative p-4 w-full h-full grid grid-cols-2 gap-4 rounded-lg z-auto">
 
                     <div class="item h-max flex flex-col gap-4">
 
@@ -388,17 +388,17 @@
 
                     </div>
 
-                </div>
+                    <div class="favorite-albums-glow absolute top-0 w-full h-full bg-gradient-to-r from-sky-500 to-teal-500 rounded-lg -z-10 blur-xl"></div>
 
-                <div class="favorite-albums-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-sky-500 to-teal-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+                </div>
 
             </div>
 
-            <div class="favorite-animes relative flex flex-col gap-4">
+            <div class="favorite-animes flex flex-col gap-4">
 
                 <h1 class="text-pink-200 font-bold text-2xl mono">Favorite Animes</h1>
 
-                <div class="bg-[#232323]/90 p-4 w-full h-full flex flex-col gap-2 rounded-lg z-10">
+                <div class="bg-[#232323]/90 relative p-4 w-full h-full flex flex-col gap-2 rounded-lg z-auto">
 
                     <div class="anime flex items-center gap-4">
 
@@ -484,9 +484,119 @@
 
                     </div>
 
+                    <div class="favorite-animes-glow absolute top-0 -ml-4 w-full h-full bg-gradient-to-r from-teal-500 to-pink-500 rounded-lg -z-10 blur-xl"></div>
+
                 </div>
 
-                <div class="favorite-animes-glow absolute bottom-24 w-full h-4/5 scale-y-[1.20] bg-gradient-to-r from-teal-500 to-pink-500 blur-xl rounded-lg p-8 group-hover:blur-xl transition-all duration-500"></div>
+            </div>
+
+        </div>
+
+        <div class="projects relative wiggle w-full min-h-screen p-12 lg:p-20 flex flex-col justify-center items-stretch" id="projects">
+
+            <h1 class="text-center text-white col-span-2 mono text-4xl font-bold">Projects</h1>
+
+            <div class="projects-container z-10 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-rows-2 gap-12 py-8 z-10 rounded-lg transition-all duration-300">
+
+                <a href="https://auroraapp.xyz" target="_blank" class="project relative group bg-[#0b0b0b] flex flex-col lg:flex-row items-center gap-8 p-4 rounded-lg z-auto transition-all duration-300" id="aurora">
+
+                    <img src="images/projects/aurora.png" class="h-32" alt="aurora Logo">
+
+                    <div class="info w-full flex flex-col">
+
+                        <h1 class="text-white font-bold text-3xl">aurora</h1>
+
+                        <p class="text-white">
+                            
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        
+                        </p>
+
+                        <div class="icons flex items-center gap-4 mt-4">
+
+                            <div class="icon w-8 h-8 bg-[#4958e3] flex justify-center items-center rounded-full" title="Laravel">
+    
+                                <i class="fa-brands fa-laravel text-white"></i>
+    
+                            </div>
+    
+                            <div class="icon w-8 h-8 bg-[#5f9ded] flex justify-center items-center rounded-full" title="Electron.js">
+    
+                                <i class="fa-brands fa-react text-white"></i>
+    
+                            </div>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-r from-[#4958e3] to-[#5f9ded] rounded-lg blur-lg group-hover:blur-xl -z-10 transition-all duration-500"></div>
+
+                </a>
+
+                <div class="project relative group bg-[#0b0b0b] flex flex-col lg:flex-row items-center gap-8 p-4 rounded-lg z-auto transition-all duration-300" id="aurora">
+
+                    <img src="images/projects/Kyoto.png" class="h-32" alt="Kyoto Logo">
+
+                    <div class="info w-full flex flex-col">
+
+                        <h1 class="text-white font-bold text-3xl">Kyoto</h1>
+
+                        <p class="text-white">
+                            
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                        
+                        </p>
+
+                        <div class="icons flex items-center gap-4 mt-4">
+    
+                            <div class="icon w-8 h-8 bg-[#ec2d42] flex justify-center items-center rounded-full" title="Electron.js">
+    
+                                <i class="fa-brands fa-react text-white"></i>
+    
+                            </div>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-r from-[#ec2d42] to-[#19133e] rounded-lg blur-lg group-hover:blur-xl -z-10 transition-all duration-500"></div>
+
+                </div>
+
+                <div class="project relative group bg-[#0b0b0b] flex flex-col lg:flex-row items-center gap-8 p-4 rounded-lg z-auto transition-all duration-300" id="aurora">
+
+                    <img src="images/projects/TechDB.png" class="h-32" alt="TechDB Logo">
+
+                    <div class="info w-full flex flex-col">
+
+                        <h1 class="text-white font-bold text-3xl">TechDB</h1>
+
+                        <p class="text-white">
+                            
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                        
+                        </p>
+
+                        <div class="icons flex items-center gap-4 mt-4">
+    
+                            <div class="icon w-8 h-8 bg-[#C479FC] flex justify-center items-center rounded-full" title="Laravel">
+    
+                                <i class="fa-brands fa-laravel text-white"></i>
+    
+                            </div>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="absolute w-full h-full top-0 left-0 bg-gradient-to-r from-[#C479FC] to-[#F3E4FE] rounded-lg blur-lg group-hover:blur-xl -z-10 transition-all duration-500"></div>
+
+                </div>
 
             </div>
 
