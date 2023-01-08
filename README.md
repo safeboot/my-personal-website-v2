@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74561130/162589094-6c0927be-1c74-4d02-8d0d-abce4383a833.png"/> 
+  <img src="https://raw.githubusercontent.com/BNK-Trolling-Group/my-personal-website-v3/main/images/MPWBanner.png"/> 
 </p>
   
 **The new, overhauled version of my personal website. .**
