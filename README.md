@@ -5,5 +5,4 @@
 **The idiotic, overhauled version of my stupid site. .**
 
 ## It's my site
-You can do nothing about it
-its just a stupid copy of mpw3 for myself 😀
+You can do nothing about it cause its just a stupid copy of mpw3 for myself 😀
